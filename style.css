@@ -1,11 +1,18 @@
-/* VARIABLES DE COLOR */
+/* VARIABLES DE COLOR Y TIPOGRAFÍA */
 :root {
     --verde-palo: #6f8f72;
     --rosado-palo: #f3d5df;
     --celeste-claro: #dceff5;
     --blanco: #ffffff;
     --texto: #272727;
+
+    --fuente-titulo: "Times New Roman", serif;
+    --fuente-texto: "Times New Roman", serif;
+
+    --espacio: 1rem;
+    --ancho-maximo: 1100px;
 }
+
 
 /* BOX MODEL MODERNO */
 * {
@@ -14,66 +21,133 @@
     box-sizing: border-box;
 }
 
+
+/* CONFIGURACIÓN GENERAL */
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Times New Roman", serif;
+    font-family: var(--fuente-texto);
     background-color: var(--blanco);
     color: var(--texto);
     line-height: 1.6;
 }
 
+
+/* ENCABEZADO */
 header {
     background-color: var(--rosado-palo);
-    padding: 25px;
+    padding: var(--espacio);
     text-align: center;
 }
 
-header h1 {
-    color: var(--verde-palo);
-    margin-bottom: 15px;
+
+/* NAVEGACIÓN */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 nav a {
     color: var(--texto);
     text-decoration: none;
-    margin: 0 15px;
+    padding: 0.7rem;
+    min-height: 44px;
 }
 
 nav a:hover {
     color: var(--verde-palo);
 }
 
+
+/* CONTENIDO PRINCIPAL */
 main {
     width: 100%;
 }
 
+
+/* SECCIONES */
 section {
-    padding: 60px 10%;
+    padding: 3rem var(--espacio);
     text-align: center;
 }
 
-section h2 {
+
+/* TÍTULO PRINCIPAL */
+h1 {
     color: var(--verde-palo);
-    margin-bottom: 20px;
+    font-family: var(--fuente-titulo);
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1rem;
 }
 
+
+/* TÍTULOS SECUNDARIOS */
+section h2 {
+    color: var(--verde-palo);
+    font-family: var(--fuente-titulo);
+    margin-bottom: 1rem;
+}
+
+
+/* PÁRRAFOS */
 section p {
     max-width: 800px;
     margin: 0 auto;
 }
 
+
+/* ARTÍCULOS */
 article {
     background-color: var(--celeste-claro);
-    padding: 20px;
-    margin: 20px auto;
+    padding: 1.25rem;
+    margin: 1.25rem auto;
     max-width: 700px;
 }
 
+
+/* PIE DE PÁGINA */
 footer {
     background-color: var(--verde-palo);
-    padding: 20px;
+    color: var(--blanco);
+    padding: 1.25rem;
     text-align: center;
+}
+
+
+/* TABLET Y COMPUTADORA */
+@media (min-width: 720px) {
+
+    nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    section {
+        padding: 4rem 10%;
+    }
+
+}
+/* HERO */
+.hero {
+    background-color: var(--rosado-palo);
+    padding: 4rem var(--espacio);
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--verde-palo);
+    font-family: var(--fuente-titulo);
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    color: var(--texto);
+    font-family: var(--fuente-texto);
+    max-width: 600px;
+    margin: 0 auto;
 }
