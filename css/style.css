@@ -1,0 +1,653 @@
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --verde-palo: #3E604A;
+    --verde-oscuro: #304C39;
+
+    --rosado-palo: #F4DCE4;
+    --rosado-suave: #FAF1F4;
+
+    --celeste-claro: #EAF5F8;
+
+    --blanco: #FFFFFF;
+    --texto: #333333;
+
+    --fuente-titulo: "Times New Roman", serif;
+    --fuente-texto: "Times New Roman", serif;
+
+    --ancho-maximo: 1100px;
+}
+
+
+/* =========================================
+   BOX MODEL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    background-color: var(--blanco);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================
+   ENCABEZADO Y NAVEGACIÓN
+========================================= */
+
+.encabezado {
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--rosado-palo);
+    padding: 0.8rem 5%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--verde-palo);
+}
+nav a:focus-visible {
+    outline: 2px solid var(--verde-palo);
+    outline-offset: 3px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    color: var(--verde-palo);
+    font-family: var(--fuente-titulo);
+    font-size: 1.05rem;
+    font-weight: bold;
+
+    margin-right: auto;
+}
+
+.logo img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.logo:hover {
+    color: var(--verde-oscuro);
+}
+
+
+/* =========================================
+   HERO PRINCIPAL
+========================================= */
+
+.hero {
+    min-height: 650px;
+
+    background-color: var(--rosado-suave);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 3rem;
+    padding: 5rem 8%;
+
+    text-align: left;
+}
+
+.hero-contenido {
+    max-width: 520px;
+}
+
+.hero-subtitulo {
+    color: var(--verde-oscuro);
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 1.5rem;
+}
+
+.hero-descripcion {
+    color: var(--texto);
+
+    font-size: 1.1rem;
+
+    max-width: 470px;
+
+    margin-bottom: 2rem;
+}
+
+.hero-boton {
+    display: inline-block;
+
+    background-color: var(--verde-palo);
+    color: var(--blanco);
+
+    text-decoration: none;
+
+    padding: 0.8rem 1.7rem;
+
+    border-radius: 30px;
+
+    font-size: 0.95rem;
+
+    transition: 0.3s ease;
+}
+
+.hero-boton:hover {
+    background-color: var(--verde-oscuro);
+    transform: translateY(-2px);
+}
+
+.hero-imagen {
+    flex: 0 1 600px;
+}
+
+.hero-imagen img {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   ESTILOS GENERALES DE SECCIONES
+========================================= */
+
+.seccion-subtitulo {
+    color: var(--verde-palo);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 0.5rem;
+}
+
+section h2 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.2;
+}
+
+.boton-secundario {
+    display: inline-block;
+
+    margin-top: 1.5rem;
+
+    color: var(--verde-oscuro);
+
+    border: 1px solid var(--verde-palo);
+
+    text-decoration: none;
+
+    padding: 0.7rem 1.5rem;
+
+    border-radius: 30px;
+
+    transition: 0.3s ease;
+}
+
+.boton-secundario:hover {
+    background-color: var(--verde-palo);
+    color: var(--blanco);
+}
+
+
+/* =========================================
+   PRESENTACIÓN
+========================================= */
+
+.bienvenida {
+    max-width: var(--ancho-maximo);
+
+    margin: 0 auto;
+
+    padding: 5rem 8%;
+
+    text-align: center;
+}
+
+.bienvenida header {
+    margin-bottom: 1.5rem;
+}
+
+.bienvenida > p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   BENEFICIOS
+========================================= */
+
+.beneficios {
+    background-color: var(--celeste-claro);
+
+    padding: 5rem 8%;
+
+    text-align: center;
+}
+
+.beneficios > header {
+    max-width: var(--ancho-maximo);
+
+    margin: 0 auto 3rem;
+}
+
+.beneficios-contenido {
+    max-width: var(--ancho-maximo);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+}
+
+.beneficio {
+    background-color: var(--blanco);
+
+    padding: 2rem;
+
+    border-radius: 18px;
+
+    box-shadow: 0 4px 15px rgba(61, 61, 61, 0.08);
+}
+
+.beneficio h3 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: 1.4rem;
+
+    margin-bottom: 0.8rem;
+}
+
+.beneficio p {
+    font-size: 0.95rem;
+}
+
+
+/* =========================================
+   VISTA PREVIA DE SERVICIOS
+========================================= */
+
+.servicios-preview {
+    max-width: var(--ancho-maximo);
+
+    margin: 0 auto;
+
+    padding: 5rem 8%;
+
+    text-align: center;
+}
+
+.servicios-preview header {
+    margin-bottom: 1.5rem;
+}
+
+.servicios-preview > p {
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   VISTA PREVIA DE PLANES
+========================================= */
+
+.planes-preview {
+    background-color: var(--rosado-suave);
+
+    padding: 5rem 8%;
+
+    text-align: center;
+}
+
+.planes-preview > header {
+    max-width: var(--ancho-maximo);
+
+    margin: 0 auto 1.5rem;
+}
+
+.planes-preview > p {
+    margin-bottom: 2rem;
+}
+
+.planes-opciones {
+    max-width: var(--ancho-maximo);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1.2rem;
+}
+
+.planes-opciones article {
+    background-color: var(--blanco);
+
+    padding: 1.5rem;
+
+    border: 1px solid var(--rosado-palo);
+
+    border-radius: 15px;
+}
+
+.planes-opciones h3 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: 1.3rem;
+
+    margin-bottom: 0.5rem;
+}
+
+.planes-opciones p {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   LLAMADA A LA ACCIÓN
+========================================= */
+
+.llamada-accion {
+    background-color: var(--verde-palo);
+
+    color: var(--blanco);
+
+    padding: 5rem 8%;
+
+    text-align: center;
+}
+
+.llamada-accion > header {
+    margin-bottom: 1.5rem;
+}
+
+.llamada-accion .seccion-subtitulo {
+    color: var(--blanco);
+}
+
+.llamada-accion h2 {
+    color: var(--blanco);
+}
+
+.llamada-accion > p {
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+.llamada-accion .hero-boton {
+    background-color: var(--blanco);
+
+    color: var(--verde-oscuro);
+}
+
+.llamada-accion .hero-boton:hover {
+    background-color: var(--rosado-suave);
+
+    color: var(--verde-oscuro);
+}
+
+
+/* =========================================
+   BOTÓN BACK TO TOP
+========================================= */
+
+#back-to-top {
+    position: fixed;
+
+    right: 1.5rem;
+    bottom: 1.5rem;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+
+    font-family: var(--fuente-texto);
+
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 1000;
+}
+
+#back-to-top.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background-color: var(--verde-palo);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background-color: var(--verde-oscuro);
+
+    color: var(--blanco);
+
+    text-align: center;
+
+    padding: 1.3rem;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 0.4rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        gap: 2rem;
+        padding: 4rem 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+
+    .beneficios-contenido {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .planes-opciones {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 719px) {
+
+    .encabezado {
+        padding: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.2rem;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero {
+        min-height: auto;
+
+        flex-direction: column;
+
+        padding: 4rem 1.5rem 2rem;
+
+        text-align: center;
+    }
+
+    .hero-contenido {
+        max-width: 100%;
+    }
+
+    .hero-subtitulo {
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+    .hero-descripcion {
+        font-size: 1rem;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-imagen {
+        width: 100%;
+    }
+
+    .hero-imagen img {
+        max-width: 450px;
+    }
+
+    .bienvenida,
+    .servicios-preview {
+        padding: 4rem 1.5rem;
+    }
+
+    .beneficios,
+    .planes-preview,
+    .llamada-accion {
+        padding: 4rem 1.5rem;
+    }
+
+    .beneficios-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .planes-opciones {
+        grid-template-columns: 1fr;
+    }
+
+    section h2 {
+        font-size: 2.2rem;
+    }
+
+    #back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+
+        width: 42px;
+        height: 42px;
+    }
+}
