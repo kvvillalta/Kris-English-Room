@@ -116,11 +116,11 @@ img {
    LOGO
 ========================================= */
 
-.encabezado nav > .logo {
+.encabezado nav > a.logo {
   display: flex;
-
+  flex-direction: row;
   align-items: center;
-
+  justify-content: flex-start;
   gap: 0.35rem;
 
   margin-right: auto;
@@ -135,25 +135,34 @@ img {
 
   padding: 0.5rem 0.7rem;
 
+  text-decoration: none;
+
+  white-space: nowrap;
+
   transition:
     color 0.3s ease,
     transform 0.3s ease;
+}
 
-  & img {
-    width: 22px;
+.encabezado nav > a.logo img {
+  width: 22px;
+  height: 22px;
 
-    height: 22px;
+  object-fit: contain;
 
-    object-fit: contain;
+  flex-shrink: 0;
+}
 
-    flex-shrink: 0;
-  }
+.encabezado nav > a.logo span {
+  display: inline-block;
 
-  &:hover {
-    color: var(--verde-oscuro);
+  white-space: nowrap;
+}
 
-    transform: translateY(-2px);
-  }
+.encabezado nav > a.logo:hover {
+  color: var(--verde-oscuro);
+
+  transform: translateY(-2px);
 }
 
 /* =========================================
