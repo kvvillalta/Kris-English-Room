@@ -1,0 +1,310 @@
+/* =========================================
+   PÁGINA PLANS
+========================================= */
+
+
+/* =========================================
+   INTRODUCCIÓN
+========================================= */
+
+.planes-intro {
+    background-color: var(--celeste-claro);
+
+    padding: 5rem 8%;
+
+    text-align: center;
+}
+
+.planes-intro h1 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    max-width: 800px;
+
+    margin: 0 auto 1.2rem;
+}
+
+.planes-intro > p:last-child {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   PLANES
+========================================= */
+
+.planes {
+    max-width: var(--ancho-maximo);
+
+    margin: 0 auto;
+
+    padding: 6rem 8%;
+}
+
+.planes-encabezado {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 3rem;
+}
+
+.planes-encabezado p:last-child {
+    margin-top: 1rem;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.planes-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.5rem;
+}
+
+
+/* =========================================
+   TARJETAS DE PLANES
+========================================= */
+
+.plan-card {
+    background-color: var(--blanco);
+
+    padding: 2.5rem;
+
+    border: 1px solid var(--rosado-palo);
+
+    border-radius: 24px;
+
+    box-shadow: 0 8px 25px rgba(61, 61, 61, 0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    & h3 {
+        color: var(--verde-oscuro);
+
+        font-family: var(--fuente-titulo);
+
+        font-size: 1.8rem;
+
+        margin-bottom: 1rem;
+    }
+
+    & > p:not(.plan-etiqueta) {
+        margin-bottom: 1.5rem;
+    }
+
+    & ul {
+        margin: 0 0 2rem;
+
+        padding-left: 1.2rem;
+    }
+
+    & li {
+        margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+
+        box-shadow: 0 12px 30px rgba(61, 61, 61, 0.12);
+    }
+}
+
+
+/* =========================================
+   PLAN DESTACADO
+========================================= */
+
+.plan-destacado {
+    background-color: var(--rosado-suave);
+
+    border: 2px solid var(--rosado-palo);
+}
+
+.plan-etiqueta {
+    align-self: flex-start;
+
+    background-color: var(--verde-palo);
+
+    color: var(--blanco);
+
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    margin: 0.8rem 0 1rem;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.plan-frecuencia {
+    color: var(--verde-palo);
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 1rem;
+}
+
+.plan-card h3 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: 1.8rem;
+
+    margin-bottom: 1rem;
+}
+
+.plan-card > p:not(.plan-etiqueta) {
+    margin-bottom: 1.5rem;
+}
+
+
+/* =========================================
+   LISTA
+========================================= */
+
+.plan-card ul {
+    margin: 0 0 2rem;
+
+    padding-left: 1.2rem;
+}
+
+.plan-card li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* =========================================
+   BOTÓN DE PLAN
+========================================= */
+
+.plan-boton {
+    margin-top: auto;
+
+    align-self: flex-start;
+
+    color: var(--verde-oscuro);
+
+    border: 1px solid var(--verde-palo);
+
+    border-radius: 25px;
+
+    padding: 0.65rem 1.2rem;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    &:hover {
+        background-color: var(--verde-palo);
+
+        color: var(--blanco);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--verde-oscuro);
+
+        outline-offset: 3px;
+    }
+}
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.planes-info {
+    background-color: var(--rosado-suave);
+
+    padding: 5rem 8%;
+
+    text-align: center;
+}
+
+.planes-info article {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.planes-info h2 {
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 719px) {
+
+    .planes-intro {
+        padding: 4rem 1.5rem;
+    }
+
+    .planes {
+        padding: 4rem 1.5rem;
+    }
+
+    .planes-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1.2rem;
+    }
+
+    .plan-card {
+        padding: 2rem;
+    }
+
+    .plan-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .plan-boton {
+        min-height: 44px;
+
+        display: inline-flex;
+
+        align-items: center;
+    }
+
+    .planes-info {
+        padding: 4rem 1.5rem;
+    }
+
+}

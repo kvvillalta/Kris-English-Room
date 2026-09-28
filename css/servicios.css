@@ -1,0 +1,238 @@
+/* =========================================
+   PÁGINA SERVICES
+========================================= */
+
+
+/* =========================================
+   INTRODUCCIÓN
+========================================= */
+
+.servicios-intro {
+    background-color: var(--rosado-suave);
+
+    padding: 5rem 8%;
+
+    text-align: center;
+}
+
+.servicios-intro h1 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    max-width: 800px;
+
+    margin: 0 auto 1.2rem;
+}
+
+.servicios-intro > p:last-child {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   SERVICIOS
+========================================= */
+
+.servicios {
+    max-width: var(--ancho-maximo);
+
+    margin: 0 auto;
+
+    padding: 6rem 8%;
+}
+
+.servicios-encabezado {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 3rem;
+}
+
+.servicios-encabezado h2 {
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================
+   GRID DE TARJETAS
+========================================= */
+
+.servicios-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.5rem;
+}
+
+
+/* =========================================
+   TARJETA
+========================================= */
+
+.servicio-card {
+    background-color: var(--blanco);
+
+    padding: 2.5rem;
+
+    border: 1px solid var(--rosado-palo);
+
+    border-radius: 24px;
+
+    box-shadow: 0 8px 25px rgba(61, 61, 61, 0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    & h3 {
+        color: var(--verde-oscuro);
+
+        font-family: var(--fuente-titulo);
+
+        font-size: 1.7rem;
+
+        margin-bottom: 1rem;
+    }
+
+    & p {
+        margin-bottom: 1.5rem;
+
+        font-size: 1rem;
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+
+        box-shadow: 0 12px 30px rgba(61, 61, 61, 0.12);
+    }
+}
+
+/* =========================================
+   NÚMERO
+========================================= */
+
+.servicio-numero {
+    color: var(--verde-palo);
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 1.2rem;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.servicio-card h3 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: 1.7rem;
+
+    margin-bottom: 1rem;
+}
+
+.servicio-card p {
+    margin-bottom: 1.5rem;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.servicio-boton {
+    align-self: flex-start;
+
+    margin-top: auto;
+
+    color: var(--verde-oscuro);
+
+    border: 1px solid var(--verde-palo);
+
+    border-radius: 25px;
+
+    padding: 0.65rem 1.2rem;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    &:hover {
+        background-color: var(--verde-palo);
+
+        color: var(--blanco);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--verde-oscuro);
+
+        outline-offset: 3px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 719px) {
+
+    .servicios-intro {
+        padding: 4rem 1.5rem;
+    }
+
+    .servicios {
+        padding: 4rem 1.5rem;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1.2rem;
+    }
+
+    .servicio-card {
+        padding: 2rem;
+    }
+
+    .servicio-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .servicio-boton {
+        min-height: 44px;
+
+        display: inline-flex;
+
+        align-items: center;
+    }
+
+}
