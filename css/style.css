@@ -72,25 +72,32 @@ img {
   margin: 0 auto;
 
   & a {
-    color: var(--verde-oscuro);
-    text-decoration: none;
-    font-size: 0.95rem;
-    padding: 0.5rem 0.7rem;
+  display: inline-block;
 
-    transition:
-      color 0.3s ease,
-      transform 0.3s ease;
+  color: var(--verde-oscuro);
 
-    &:hover {
-      color: var(--verde-palo);
-      transform: translateY(-3px);
-    }
+  text-decoration: none;
 
-    &:focus-visible {
-      outline: 2px solid var(--verde-palo);
-      outline-offset: 3px;
-    }
+  font-size: 0.95rem;
+
+  padding: 0.5rem 0.7rem;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    color: var(--verde-palo);
+
+    transform: translateY(-4px);
   }
+
+  &:focus-visible {
+    outline: 2px solid var(--verde-palo);
+
+    outline-offset: 3px;
+  }
+}
 }
 
 .logo {
