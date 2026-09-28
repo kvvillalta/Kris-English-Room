@@ -78,8 +78,6 @@ img {
   margin: 0 auto;
 
   & a {
-    display: inline-block;
-
     color: var(--verde-oscuro);
 
     text-decoration: none;
@@ -96,26 +94,36 @@ img {
   }
 }
 
-/* Movimiento de los enlaces */
+/* =========================================
+   MOVIMIENTO DE LOS ENLACES
+========================================= */
 
-.encabezado nav a {
+.encabezado nav > a:not(.logo) {
+  display: inline-block;
+
   transition:
     color 0.3s ease,
     transform 0.3s ease;
 }
 
-.encabezado nav a:hover {
+.encabezado nav > a:not(.logo):hover {
   color: var(--verde-palo);
 
   transform: translateY(-4px);
 }
 
-.logo {
+/* =========================================
+   LOGO
+========================================= */
+
+.encabezado nav > .logo {
   display: flex;
 
   align-items: center;
 
   gap: 0.35rem;
+
+  margin-right: auto;
 
   color: var(--verde-palo);
 
@@ -125,7 +133,7 @@ img {
 
   font-weight: bold;
 
-  margin-right: auto;
+  padding: 0.5rem 0.7rem;
 
   transition:
     color 0.3s ease,
@@ -137,6 +145,8 @@ img {
     height: 22px;
 
     object-fit: contain;
+
+    flex-shrink: 0;
   }
 
   &:hover {
@@ -156,10 +166,13 @@ img {
   background-color: var(--rosado-suave);
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   gap: 3rem;
+
   padding: 5rem 8%;
 
   text-align: left;
@@ -173,6 +186,7 @@ img {
   color: var(--verde-oscuro);
 
   font-size: 0.9rem;
+
   font-weight: bold;
 
   letter-spacing: 2px;
@@ -206,6 +220,7 @@ img {
   display: inline-block;
 
   background-color: var(--verde-palo);
+
   color: var(--blanco);
 
   text-decoration: none;
@@ -221,6 +236,7 @@ img {
 
 .hero-boton:hover {
   background-color: var(--verde-oscuro);
+
   transform: translateY(-2px);
 }
 
@@ -280,6 +296,7 @@ section h2 {
 
 .boton-secundario:hover {
   background-color: var(--verde-palo);
+
   color: var(--blanco);
 }
 
@@ -497,25 +514,31 @@ section h2 {
   position: fixed;
 
   right: 1.5rem;
+
   bottom: 1.5rem;
 
   width: 45px;
+
   height: 45px;
 
   border: none;
+
   border-radius: 50%;
 
   background-color: var(--verde-oscuro);
+
   color: var(--blanco);
 
   font-family: var(--fuente-texto);
 
   font-size: 1.3rem;
+
   font-weight: bold;
 
   cursor: pointer;
 
   opacity: 0;
+
   visibility: hidden;
 
   transition: 0.3s ease;
@@ -525,11 +548,13 @@ section h2 {
 
 #back-to-top.mostrar {
   opacity: 1;
+
   visibility: visible;
 }
 
 #back-to-top:hover {
   background-color: var(--verde-palo);
+
   transform: translateY(-2px);
 }
 
@@ -564,6 +589,7 @@ footer {
 
   .hero {
     gap: 2rem;
+
     padding: 4rem 6%;
   }
 
@@ -573,11 +599,13 @@ footer {
 
   .beneficios-contenido {
     grid-template-columns: 1fr;
+
     max-width: 600px;
   }
 
   .planes-opciones {
     grid-template-columns: repeat(2, 1fr);
+
     max-width: 700px;
   }
 }
@@ -593,12 +621,15 @@ footer {
 
   nav {
     flex-direction: column;
+
     justify-content: center;
+
     gap: 0.2rem;
   }
 
-  .logo {
+  .encabezado nav > .logo {
     margin-right: 0;
+
     margin-bottom: 0.5rem;
   }
 
@@ -618,6 +649,7 @@ footer {
 
   .hero-subtitulo {
     font-size: 0.8rem;
+
     letter-spacing: 1.5px;
   }
 
@@ -629,6 +661,7 @@ footer {
     font-size: 1rem;
 
     margin-left: auto;
+
     margin-right: auto;
   }
 
@@ -665,9 +698,11 @@ footer {
 
   #back-to-top {
     right: 1rem;
+
     bottom: 1rem;
 
     width: 42px;
+
     height: 42px;
   }
 }
