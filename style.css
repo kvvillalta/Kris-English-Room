@@ -1537,29 +1537,21 @@ footer {
 ========================================= */
 
 .contacto {
-  max-width: 850px;
-
+  max-width: var(--ancho-maximo);
   margin: 0 auto;
-
   padding: 5rem 8%;
 }
 
 .contacto-introduccion {
   max-width: 700px;
-
-  margin: 0 auto 3rem;
-
+  margin: 0 auto 3.5rem;
   text-align: center;
 
   h1 {
     color: var(--verde-oscuro);
-
     font-family: var(--fuente-titulo);
-
     font-size: clamp(2.5rem, 6vw, 4.5rem);
-
     line-height: 1.1;
-
     margin-bottom: 1rem;
   }
 
@@ -1569,20 +1561,113 @@ footer {
 }
 
 /* =========================================
+   CONTENIDO DE CONTACTO
+========================================= */
+
+.contacto-contenido {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* =========================================
+   INFORMACIÓN DE CONTACTO
+========================================= */
+
+.contacto-informacion {
+  background-color: var(--celeste-claro);
+  border-radius: 24px;
+  padding: 2.5rem;
+
+  h2 {
+    color: var(--verde-oscuro);
+    font-family: var(--fuente-titulo);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  .contacto-texto {
+    margin-bottom: 2rem;
+  }
+}
+
+/* =========================================
+   DATOS DE CONTACTO
+========================================= */
+
+.contacto-datos {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.contacto-dato {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 1rem;
+  align-items: center;
+
+  padding: 1rem;
+
+  background-color: var(--blanco);
+
+  border-radius: 15px;
+
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: var(--rosado-palo);
+    color: var(--verde-oscuro);
+
+    border-radius: 50%;
+  }
+
+  h3 {
+    color: var(--verde-oscuro);
+    font-family: var(--fuente-titulo);
+    margin-bottom: 0.2rem;
+  }
+
+  p,
+  a {
+    font-size: 0.9rem;
+  }
+
+  a {
+    color: var(--verde-palo);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    &:hover {
+      color: var(--verde-oscuro);
+      text-decoration: underline;
+    }
+  }
+}
+
+/* =========================================
    FORMULARIO
 ========================================= */
 
-.contacto-formulario {
+.contacto-formulario-contenedor {
   background-color: var(--blanco);
 
   border: 1px solid var(--rosado-palo);
 
-  border-radius: 20px;
+  border-radius: 24px;
 
   padding: 2.5rem;
 
-  box-shadow: 0 4px 15px rgba(61, 61, 61, 0.08);
+  box-shadow: 0 5px 20px rgba(61, 61, 61, 0.08);
+}
 
+.contacto-formulario {
   fieldset {
     border: none;
   }
@@ -1593,9 +1678,16 @@ footer {
     font-family: var(--fuente-titulo);
 
     font-size: 2rem;
+
     font-weight: bold;
 
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .formulario-descripcion {
+    margin-bottom: 1.8rem;
+
+    font-size: 0.95rem;
   }
 
   label {
@@ -1612,7 +1704,7 @@ footer {
   textarea {
     width: 100%;
 
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1rem;
 
     margin-bottom: 1.3rem;
 
@@ -1628,17 +1720,69 @@ footer {
 
     font-size: 1rem;
 
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s ease;
+
     &:focus {
-      outline: 2px solid var(--verde-palo);
-      outline-offset: 2px;
+      outline: none;
+
+      border-color: var(--verde-palo);
+
+      box-shadow: 0 0 0 3px rgba(62, 96, 74, 0.12);
+
+      background-color: var(--blanco);
     }
   }
 
   textarea {
     resize: vertical;
-
     min-height: 140px;
   }
+
+  .hero-boton {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
+/* =====================================================
+   NO COMÚN - THANK YOU
+   ===================================================== */
+
+.gracias {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 9rem 8% 5rem;
+    text-align: center;
+}
+
+.gracias h1 {
+    color: var(--verde-oscuro);
+    font-family: var(--fuente-titulo);
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.gracias > p:not(.seccion-subtitulo) {
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.gracias-botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.gracias-botones .boton-secundario {
+    margin-top: 0;
 }
 
 /* =========================================
@@ -1888,10 +2032,24 @@ footer {
     height: 220px;
   }
 
-  /* CONTACT */
+    /* CONTACT */
 
-  .contacto-formulario {
+  .contacto {
+    padding: 4rem 1.5rem;
+  }
+
+  .contacto-contenido {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contacto-informacion,
+  .contacto-formulario-contenedor {
     padding: 2rem 1.5rem;
+  }
+
+  .contacto-informacion h2 {
+    font-size: 2.2rem;
   }
 
   .contacto-formulario legend {
@@ -1911,7 +2069,7 @@ footer {
     min-height: 44px;
   }
 
-    /* BACK TO TOP */
+  /* BACK TO TOP */
 
   #back-to-top {
     right: 1rem;
@@ -1920,7 +2078,6 @@ footer {
     width: 42px;
     height: 42px;
   }
-
   /* FOOTER */
 
   footer {

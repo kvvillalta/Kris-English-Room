@@ -11,19 +11,37 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="img/favicon_io/favicon-32x32.png">
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="img/favicon_io/apple-touch-icon.png"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="img/favicon_io/favicon-32x32.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
 </head>
 
+
 <body>
+
+    <!-- HEADER -->
 
     <header class="encabezado">
 
         <nav aria-label="Main navigation">
 
             <a class="logo" href="index.html">
-                🍎 Kris English Room
+                🍎
+                <span>Kris English Room</span>
             </a>
 
             <a href="index.html">Home</a>
@@ -36,7 +54,12 @@
 
             <a href="galeria.html">Gallery</a>
 
-            <a href="contacto.html" aria-current="page">Contact</a>
+            <a
+                href="contacto.html"
+                aria-current="page"
+            >
+                Contact
+            </a>
 
         </nav>
 
@@ -45,119 +68,357 @@
 
     <main>
 
+        <!-- CONTACT -->
+
         <section class="contacto">
+
+
+            <!-- INTRODUCTION -->
 
             <header class="contacto-introduccion">
 
-                <p class="seccion-subtitulo">Kris English Room</p>
+                <p class="seccion-subtitulo">
+                    Kris English Room
+                </p>
 
-                <h1>Let's learn together</h1>
+                <h1>
+                    Let's learn together
+                </h1>
 
                 <p>
                     Have a question about our English classes or plans?
-                    Complete the form below and we will be happy to help.
+                    Complete the form and I will be happy to help you.
                 </p>
 
             </header>
 
 
-            <form class="contacto-formulario" id="contact-form">
+            <!-- CONTACT CONTENT -->
 
-                <fieldset>
-
-                    <legend>Send us a message</legend>
+            <section class="contacto-contenido">
 
 
-                    <label for="name">Name</label>
+                <!-- CONTACT INFORMATION -->
 
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        autocomplete="name"
-                        required
+                <section class="contacto-informacion">
+
+                    <header>
+
+                        <p class="seccion-subtitulo">
+                            Get in touch
+                        </p>
+
+                        <h2>
+                            I'd love to hear from you!
+                        </h2>
+
+                    </header>
+
+
+                    <p class="contacto-texto">
+                        Whether you have questions about the classes,
+                        plans or learning options, feel free to send a message.
+                    </p>
+
+
+                    <section class="contacto-datos">
+
+
+                        <!-- EMAIL -->
+
+                        <article class="contacto-dato">
+
+                            <i
+                                class="fa-solid fa-envelope"
+                                aria-hidden="true"
+                            ></i>
+
+                            <section>
+
+                                <h3>
+                                    Email
+                                </h3>
+
+                                <a href="mailto:kristel.villalta.rodriguez@est.una.ac.cr">
+                                    kristel.villalta.rodriguez@est.una.ac.cr
+                                </a>
+
+                            </section>
+
+                        </article>
+
+
+                        <!-- PHONE -->
+
+                        <article class="contacto-dato">
+
+                            <i
+                                class="fa-solid fa-phone"
+                                aria-hidden="true"
+                            ></i>
+
+                            <section>
+
+                                <h3>
+                                    Phone
+                                </h3>
+
+                                <a href="tel:+50660518417">
+                                    +506 6051-8417
+                                </a>
+
+                            </section>
+
+                        </article>
+
+
+                        <!-- LEARNING -->
+
+                        <article class="contacto-dato">
+
+                            <i
+                                class="fa-solid fa-book-open"
+                                aria-hidden="true"
+                            ></i>
+
+                            <section>
+
+                                <h3>
+                                    Learning
+                                </h3>
+
+                                <p>
+                                    Personalized English classes
+                                    adapted to your goals.
+                                </p>
+
+                            </section>
+
+                        </article>
+
+
+                    </section>
+
+                </section>
+
+
+                <!-- CONTACT FORM -->
+
+                <section class="contacto-formulario-contenedor">
+
+
+                    <form
+                        class="contacto-formulario"
+                        id="contact-form"
+                        action="https://formsubmit.co/kristel.villalta.rodriguez@est.una.ac.cr"
+                        method="POST"
                     >
 
 
-                    <label for="email">Email</label>
+                        <!-- FORMSUBMIT CONFIGURATION -->
 
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        autocomplete="email"
-                        required
-                    >
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="New message from Kris English Room"
+                        >
 
+                        <input
+                            type="hidden"
+                            name="_autoresponse"
+                            value="Thank you for contacting Kris English Room. We have received your message and will get back to you soon."
+                        >
 
-                    <label for="subject">Subject</label>
+                        <input
+                            type="hidden"
+                            name="_template"
+                            value="table"
+                        >
 
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        required
-                    >
-
-
-                    <label for="message">Message</label>
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="6"
-                        required
-                    ></textarea>
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value="https://kvvillalta.github.io/Kris-English-Room/gracias.html"
+                        >
 
 
-                    <button type="submit" class="hero-boton">
-                        Send message
-                    </button>
+                        <fieldset>
 
-                </fieldset>
 
-            </form>
+                            <legend>
+                                Send us a message
+                            </legend>
+
+
+                            <p class="formulario-descripcion">
+                                Fill in the information below and we will get back to you soon.
+                            </p>
+
+
+                            <!-- NAME -->
+
+                            <label for="name">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                autocomplete="name"
+                                placeholder="Your name"
+                                required
+                            >
+
+
+                            <!-- EMAIL -->
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="Your email"
+                                required
+                            >
+
+
+                            <!-- SUBJECT -->
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="What would you like to know?"
+                                required
+                            >
+
+
+                            <!-- MESSAGE -->
+
+                            <label for="message">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Write your message here..."
+                                required
+                            ></textarea>
+
+
+                            <!-- SUBMIT -->
+
+                            <button
+                                type="submit"
+                                class="hero-boton"
+                            >
+                                Send message
+                            </button>
+
+
+                        </fieldset>
+
+
+                    </form>
+
+
+                </section>
+
+
+            </section>
+
 
         </section>
 
     </main>
 
 
- <!-- FOOTER -->
+    <!-- FOOTER -->
 
- <footer>
-    <section class="footer-contenido">
+    <footer>
 
-        <section class="footer-columna">
-            <h3>Kris English Room</h3>
-            <p>Learn, practice and grow with English.</p>
+
+        <section class="footer-contenido">
+
+
+            <section class="footer-columna">
+
+                <h3>
+                    Kris English Room
+                </h3>
+
+                <p>
+                    Learn, practice and grow with English.
+                </p>
+
+            </section>
+
+
+            <section class="footer-columna">
+
+                <h3>
+                    Contact
+                </h3>
+
+
+                <p>
+
+                    <i
+                        class="fa-solid fa-envelope"
+                        aria-hidden="true"
+                    ></i>
+
+                    <a href="mailto:kristel.villalta.rodriguez@est.una.ac.cr">
+                        kristel.villalta.rodriguez@est.una.ac.cr
+                    </a>
+
+                </p>
+
+
+                <p>
+
+                    <i
+                        class="fa-solid fa-phone"
+                        aria-hidden="true"
+                    ></i>
+
+                    <a href="tel:+50660518417">
+                        +506 6051-8417
+                    </a>
+
+                </p>
+
+
+            </section>
+
+
         </section>
 
-        <section class="footer-columna">
-            <h3>Contact</h3>
 
-            <p>
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:kristel.villalta.rodriguez@est.una.ac.cr">
-                    kristel.villalta.rodriguez@est.una.ac.cr
-                </a>
-            </p>
+        <p class="footer-derechos">
 
-            <p>
-                <i class="fa-solid fa-phone"></i>
-                <a href="tel:+50660518417">
-                    +506 6051-8417
-                </a>
-            </p>
-        </section>
+            &copy;
 
-    </section>
+            <span id="footer-year"></span>
 
-    <p class="footer-derechos">
-        &copy; <span id="footer-year"></span> Kris English Room.
-        All rights reserved.
-    </p>
-</footer>
+            Kris English Room. All rights reserved.
+
+        </p>
+
+
+    </footer>
+
 
     <script src="script.js"></script>
 
