@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Kris English Room</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="img/favicon_io/favicon-32x32.png">
+
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <nav aria-label="Main navigation">
+
+            <a class="logo" href="index.html">
+                🍎 Kris English Room
+            </a>
+
+            <a href="index.html">Home</a>
+
+            <a href="nosotros.html">About Me</a>
+
+            <a href="servicios.html">Services</a>
+
+            <a href="planes.html">Plans</a>
+
+            <a href="galeria.html">Gallery</a>
+
+            <a href="contacto.html" aria-current="page">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="contacto">
+
+            <header class="contacto-introduccion">
+
+                <p class="seccion-subtitulo">Kris English Room</p>
+
+                <h1>Let's learn together</h1>
+
+                <p>
+                    Have a question about our English classes or plans?
+                    Complete the form below and we will be happy to help.
+                </p>
+
+            </header>
+
+
+            <form class="contacto-formulario" id="contact-form">
+
+                <fieldset>
+
+                    <legend>Send us a message</legend>
+
+
+                    <label for="name">Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                    >
+
+
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+
+
+                    <label for="subject">Subject</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        required
+                    >
+
+
+                    <label for="message">Message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        required
+                    ></textarea>
+
+
+                    <button type="submit" class="hero-boton">
+                        Send message
+                    </button>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+ <!-- FOOTER -->
+
+ <footer>
+    <section class="footer-contenido">
+
+        <section class="footer-columna">
+            <h3>Kris English Room</h3>
+            <p>Learn, practice and grow with English.</p>
+        </section>
+
+        <section class="footer-columna">
+            <h3>Contact</h3>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:kristel.villalta.rodriguez@est.una.ac.cr">
+                    kristel.villalta.rodriguez@est.una.ac.cr
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+50660518417">
+                    +506 6051-8417
+                </a>
+            </p>
+        </section>
+
+    </section>
+
+    <p class="footer-derechos">
+        &copy; <span id="footer-year"></span> Kris English Room.
+        All rights reserved.
+    </p>
+</footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

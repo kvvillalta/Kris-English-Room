@@ -1,0 +1,1939 @@
+/* =========================================
+   COSAS EN COMÚN
+========================================= */
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+  --verde-palo: #3e604a;
+  --verde-oscuro: #304c39;
+
+  --rosado-palo: #f4dce4;
+  --rosado-suave: #faf1f4;
+
+  --celeste-claro: #eaf5f8;
+
+  --blanco: #ffffff;
+  --texto: #333333;
+
+  --fuente-titulo: "Times New Roman", serif;
+  --fuente-texto: "Times New Roman", serif;
+
+  --ancho-maximo: 1100px;
+}
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  background-color: var(--blanco);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   HEADER Y NAVEGACIÓN
+========================================= */
+
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 100;
+
+  background-color: var(--blanco);
+  padding: 1rem 8%;
+
+  border-bottom: 1px solid var(--rosado-palo);
+
+  nav {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 0.8rem;
+    flex-wrap: wrap;
+
+    > a {
+      color: var(--verde-oscuro);
+      text-decoration: none;
+
+      font-size: 0.95rem;
+
+      padding: 0.5rem 0.7rem;
+
+      &:focus-visible {
+        outline: 2px solid var(--verde-palo);
+        outline-offset: 3px;
+      }
+
+      &:not(.logo) {
+        display: inline-block;
+
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
+
+        &:hover {
+          color: var(--verde-palo);
+          transform: translateY(-4px);
+        }
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      gap: 0.35rem;
+
+      margin-right: auto;
+
+      color: var(--verde-palo);
+
+      font-family: var(--fuente-titulo);
+      font-size: 1.05rem;
+      font-weight: bold;
+
+      text-decoration: none;
+      white-space: nowrap;
+
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+      &:hover {
+        color: var(--verde-oscuro);
+        transform: translateY(-2px);
+      }
+
+      img {
+        width: 22px;
+        height: 22px;
+
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      span {
+        display: inline-block;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+/* =========================================
+   ESPACIO PARA EL HEADER FIJO
+========================================= */
+
+main {
+  padding-top: 75px;
+}
+
+/* =========================================
+   TEXTOS Y TÍTULOS COMUNES
+========================================= */
+
+.seccion-subtitulo {
+  color: var(--verde-palo);
+
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+
+  margin-bottom: 0.5rem;
+}
+
+section h2 {
+  color: var(--verde-oscuro);
+
+  font-family: var(--fuente-titulo);
+
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  line-height: 1.2;
+}
+
+/* =========================================
+   BOTÓN PRINCIPAL
+========================================= */
+
+.hero-boton {
+  display: inline-block;
+
+  background-color: var(--verde-palo);
+  color: var(--blanco);
+
+  padding: 0.8rem 1.7rem;
+
+  border: 2px solid var(--verde-palo);
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-family: var(--fuente-texto);
+  font-size: 0.95rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    background-color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+
+    color: var(--blanco);
+
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--verde-oscuro);
+    outline-offset: 3px;
+  }
+}
+
+/* =========================================
+   BOTÓN SECUNDARIO
+========================================= */
+
+.boton-secundario {
+  display: inline-block;
+
+  margin-top: 1.5rem;
+
+  background-color: var(--blanco);
+  color: var(--verde-oscuro);
+
+  border: 2px solid var(--verde-palo);
+  border-radius: 30px;
+
+  padding: 0.8rem 1.6rem;
+
+  text-decoration: none;
+
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    background-color: var(--verde-palo);
+    color: var(--blanco);
+
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--verde-oscuro);
+    outline-offset: 3px;
+  }
+}
+
+/* =========================================
+   TARJETAS COMUNES
+========================================= */
+
+.tarjeta {
+  background-color: var(--blanco);
+
+  border: 1px solid var(--rosado-palo);
+  border-radius: 20px;
+
+  padding: 2rem;
+
+  box-shadow: 0 8px 25px rgba(61, 61, 61, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(61, 61, 61, 0.12);
+  }
+}
+
+/* =========================================
+   LLAMADA A LA ACCIÓN
+========================================= */
+
+.llamada-accion {
+  background-color: var(--verde-palo);
+  color: var(--blanco);
+
+  padding: 5rem 8%;
+
+  text-align: center;
+
+  > header {
+    margin-bottom: 1.5rem;
+  }
+
+  .seccion-subtitulo {
+    color: var(--blanco);
+  }
+
+  h2 {
+    color: var(--blanco);
+  }
+
+  > p {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .hero-boton {
+    margin-top: 1.5rem;
+
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+
+    border-color: var(--blanco);
+
+    &:hover {
+      background-color: var(--rosado-suave);
+      color: var(--verde-oscuro);
+
+      border-color: var(--rosado-suave);
+    }
+  }
+}
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+#back-to-top {
+  position: fixed;
+
+  right: 1.5rem;
+  bottom: 1.5rem;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+
+  font-family: var(--fuente-texto);
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s ease;
+
+  z-index: 1000;
+
+  &:hover {
+    background-color: var(--verde-palo);
+    transform: translateY(-2px);
+  }
+
+  &.mostrar {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 2.5rem 8% 1rem;
+
+    .footer-contenido {
+        max-width: var(--ancho-maximo);
+        margin: 0 auto 1.8rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .footer-columna {
+        h3 {
+            font-family: var(--fuente-titulo);
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+
+        p {
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        a {
+            color: var(--blanco);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--rosado-palo);
+        }
+
+        i {
+            margin-right: 0.4rem;
+            font-size: 0.8rem;
+        }
+    }
+
+    .footer-derechos {
+        max-width: var(--ancho-maximo);
+        margin: 0 auto;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        font-size: 0.75rem;
+        opacity: 0.75;
+    }
+}
+
+
+/* =========================================
+   NO COMÚN - HOME
+========================================= */
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  min-height: 650px;
+
+  background-color: var(--rosado-suave);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(300px, 1fr);
+
+  align-items: center;
+
+  gap: 3rem;
+
+  padding: 5rem 8%;
+
+  text-align: left;
+
+  .hero-contenido {
+    max-width: 520px;
+  }
+
+  .hero-subtitulo {
+    color: var(--verde-oscuro);
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-descripcion {
+    max-width: 470px;
+
+    margin-bottom: 2rem;
+
+    font-size: 1.1rem;
+  }
+
+  .hero-imagen {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+
+    img {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+}
+
+/* =========================================
+   BIENVENIDA
+========================================= */
+
+.bienvenida {
+  max-width: var(--ancho-maximo);
+
+  margin: 0 auto;
+
+  padding: 5rem 8%;
+
+  text-align: center;
+
+  header {
+    margin-bottom: 1.5rem;
+  }
+
+  > p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================================
+   BENEFICIOS
+========================================= */
+
+.beneficios {
+  background-color: var(--celeste-claro);
+  padding: 5rem 8%;
+  text-align: center;
+
+  > header {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto 3rem;
+  }
+
+  .beneficios-contenido {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+
+  .beneficio {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border: 1px solid var(--rosado-palo);
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(61, 61, 61, 0.08);
+
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 7px 20px rgba(61, 61, 61, 0.12);
+    }
+
+    h3 {
+      color: var(--verde-oscuro);
+      font-family: var(--fuente-titulo);
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+/* =========================================
+   VISTA PREVIA DE SERVICIOS
+========================================= */
+
+.servicios-preview {
+  max-width: var(--ancho-maximo);
+
+  margin: 0 auto;
+
+  padding: 5rem 8%;
+
+  text-align: center;
+
+  header {
+    margin-bottom: 1.5rem;
+  }
+
+  > p {
+    max-width: 650px;
+
+    margin: 0 auto;
+  }
+}
+
+/* =========================================
+   VISTA PREVIA DE PLANES
+========================================= */
+
+.planes-preview {
+  background-color: var(--rosado-suave);
+  padding: 5rem 8%;
+  text-align: center;
+
+  > header {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto 1.5rem;
+  }
+
+  > p {
+    margin-bottom: 2rem;
+  }
+
+  .planes-opciones {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.2rem;
+
+    article {
+      background-color: var(--blanco);
+      padding: 1.5rem;
+      border: 1px solid var(--rosado-palo);
+      border-radius: 15px;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 7px 20px rgba(61, 61, 61, 0.12);
+      }
+
+      h3 {
+        color: var(--verde-oscuro);
+        font-family: var(--fuente-titulo);
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* =========================================
+   NO COMÚN - ABOUT ME
+========================================= */
+
+/* =========================================
+   ABOUT HERO
+========================================= */
+
+.about-hero {
+  min-height: 620px;
+
+  background-color: var(--rosado-suave);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(300px, 1fr);
+
+  align-items: center;
+
+  gap: 4rem;
+
+  padding: 5rem 8%;
+
+  overflow: hidden;
+
+  .about-hero-contenido {
+    max-width: 550px;
+
+    h1 {
+      color: var(--verde-oscuro);
+
+      font-family: var(--fuente-titulo);
+
+      font-size: clamp(3rem, 7vw, 5.5rem);
+
+      line-height: 1;
+
+      margin-bottom: 1.5rem;
+    }
+
+    > p:not(.seccion-subtitulo) {
+      max-width: 480px;
+
+      font-size: 1.15rem;
+
+      margin-bottom: 2rem;
+    }
+  }
+
+  .about-hero-imagen {
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+
+    img {
+      width: 100%;
+      max-width: 500px;
+
+      object-fit: contain;
+
+      filter: drop-shadow(0 15px 20px rgba(61, 61, 61, 0.12));
+    }
+  }
+}
+
+/* =========================================
+   SOBRE MÍ
+========================================= */
+
+.sobre-mi {
+  max-width: var(--ancho-maximo);
+
+  margin: 0 auto;
+
+  padding: 6rem 8%;
+
+  .sobre-mi-intro {
+    max-width: 750px;
+
+    margin: 0 auto 3.5rem;
+
+    text-align: center;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .sobre-mi-grid {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1.3fr)
+      minmax(280px, 0.7fr);
+
+    gap: 4rem;
+
+    align-items: center;
+  }
+
+  .sobre-mi-texto {
+    max-width: 700px;
+
+    p {
+      font-size: 1.05rem;
+
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  .sobre-mi-destacado {
+    background-color: var(--celeste-claro);
+
+    padding: 2.5rem;
+
+    border-radius: 24px;
+
+    border: 1px solid rgba(62, 96, 74, 0.08);
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(61, 61, 61, 0.07);
+
+    h3 {
+      color: var(--verde-oscuro);
+
+      font-family: var(--fuente-titulo);
+      font-size: 1.7rem;
+
+      margin-bottom: 1rem;
+    }
+  }
+
+  .destacado-icono {
+    display: block;
+
+    color: var(--verde-palo);
+
+    font-size: 2rem;
+
+    margin-bottom: 0.8rem;
+  }
+}
+
+/* =========================================
+   CUALIDADES
+========================================= */
+
+.cualidades {
+  background-color: var(--celeste-claro);
+  padding: 6rem 8%;
+  text-align: center;
+
+  > header {
+    max-width: 750px;
+    margin: 0 auto 3rem;
+
+    > p:last-child {
+      max-width: 600px;
+      margin: 1rem auto 0;
+    }
+  }
+
+  .cualidades-grid {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .cualidad {
+    background-color: var(--blanco);
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+
+    text-align: left;
+
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(61, 61, 61, 0.1);
+    }
+
+    .cualidad-numero {
+      display: block;
+      color: var(--verde-palo);
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: var(--verde-oscuro);
+      font-family: var(--fuente-titulo);
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+/* =========================================
+   POR QUÉ ENSEÑO
+========================================= */
+
+.por-que-enseno {
+  max-width: var(--ancho-maximo);
+
+  margin: 0 auto;
+
+  padding: 6rem 8%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(280px, 0.9fr);
+
+  gap: 4rem;
+
+  align-items: center;
+
+  article:first-child {
+    max-width: 600px;
+
+    h2 {
+      margin-bottom: 1.3rem;
+    }
+
+    p:not(.seccion-subtitulo) {
+      margin-bottom: 1rem;
+
+      font-size: 1.05rem;
+    }
+  }
+
+  .por-que-frase {
+    background-color: var(--rosado-suave);
+
+    padding: 2.5rem;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    border: 1px solid var(--rosado-palo);
+
+    span {
+      color: var(--verde-palo);
+
+      font-family: Georgia, serif;
+
+      font-size: 3rem;
+
+      line-height: 0.5;
+    }
+
+    p {
+      color: var(--verde-oscuro);
+
+      font-family: var(--fuente-titulo);
+
+      font-size: 1.35rem;
+
+      line-height: 1.5;
+
+      margin: 1rem 0;
+    }
+  }
+}
+
+/* =========================================
+   KRIS ENGLISH ROOM
+========================================= */
+
+.kris-room {
+  background-color: var(--rosado-suave);
+  padding: 6rem 8%;
+  text-align: center;
+
+  > header {
+    max-width: 750px;
+    margin: 0 auto 1.5rem;
+  }
+
+  > p {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.05rem;
+  }
+
+  .kris-room-puntos {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+
+    article {
+      background-color: var(--blanco);
+      padding: 2rem;
+      border: 1px solid var(--rosado-palo);
+      border-radius: 20px;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 7px 20px rgba(61, 61, 61, 0.12);
+      }
+
+      h3 {
+        color: var(--verde-oscuro);
+        font-family: var(--fuente-titulo);
+        font-size: 1.6rem;
+        margin-bottom: 0.7rem;
+      }
+    }
+  }
+}
+
+/* =========================================
+   NO COMÚN - SERVICES
+========================================= */
+
+/* =========================================
+   INTRODUCCIÓN
+========================================= */
+
+.servicios-intro {
+  background-color: var(--rosado-suave);
+
+  padding: 5rem 8%;
+
+  text-align: center;
+
+  h1 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    max-width: 800px;
+
+    margin: 0 auto 1.2rem;
+  }
+
+  > p:last-child {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================
+   SERVICIOS
+========================================= */
+
+.servicios {
+  max-width: var(--ancho-maximo);
+
+  margin: 0 auto;
+
+  padding: 6rem 8%;
+
+  .servicios-encabezado {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 3rem;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* =========================================
+   TARJETAS DE SERVICIO
+========================================= */
+
+.servicio-card {
+  background-color: var(--blanco);
+  padding: 2.5rem;
+
+  border: 1px solid var(--rosado-palo);
+  border-radius: 24px;
+
+  box-shadow: 0 8px 25px rgba(61, 61, 61, 0.06);
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(61, 61, 61, 0.12);
+  }
+
+  h3 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: 1.7rem;
+
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+
+    font-size: 1rem;
+  }
+}
+/* =========================================
+   NÚMERO DE SERVICIO
+========================================= */
+
+.servicio-numero {
+  color: var(--verde-palo);
+
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 1.2rem;
+}
+
+/* =========================================
+   BOTÓN DE SERVICIO
+========================================= */
+
+.servicio-boton {
+  align-self: flex-start;
+
+  margin-top: auto;
+
+  color: var(--verde-oscuro);
+
+  border: 1px solid var(--verde-palo);
+  border-radius: 25px;
+
+  padding: 0.65rem 1.2rem;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background-color: var(--verde-palo);
+    color: var(--blanco);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--verde-oscuro);
+    outline-offset: 3px;
+  }
+}
+
+/* =========================================
+   NO COMÚN - PLANS
+========================================= */
+
+/* =========================================
+   INTRODUCCIÓN
+========================================= */
+
+.planes-intro {
+  background-color: var(--celeste-claro);
+
+  padding: 5rem 8%;
+
+  text-align: center;
+
+  h1 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    max-width: 800px;
+
+    margin: 0 auto 1.2rem;
+  }
+
+  > p:last-child {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================
+   PLANES
+========================================= */
+
+.planes {
+  max-width: var(--ancho-maximo);
+
+  margin: 0 auto;
+
+  padding: 6rem 8%;
+
+  .planes-encabezado {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 3rem;
+
+    p:last-child {
+      margin-top: 1rem;
+    }
+  }
+
+  .planes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* =========================================
+   TARJETAS DE PLAN
+========================================= */
+
+.plan-card {
+  background-color: var(--blanco);
+  padding: 2.5rem;
+
+  border: 1px solid var(--rosado-palo);
+  border-radius: 24px;
+
+  box-shadow: 0 8px 25px rgba(61, 61, 61, 0.06);
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(61, 61, 61, 0.12);
+  }
+
+  h3 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: 1.8rem;
+
+    margin-bottom: 1rem;
+  }
+
+  > p:not(.plan-etiqueta) {
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    margin: 0 0 2rem;
+    padding-left: 1.2rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* =========================================
+   PLAN DESTACADO
+========================================= */
+
+.plan-destacado {
+  background-color: var(--rosado-suave);
+
+  border: 2px solid var(--rosado-palo);
+}
+
+/* =========================================
+   ETIQUETA
+========================================= */
+
+.plan-etiqueta {
+  align-self: flex-start;
+
+  background-color: var(--verde-palo);
+
+  color: var(--blanco);
+
+  padding: 0.35rem 0.7rem;
+
+  border-radius: 20px;
+
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  margin: 0.8rem 0 1rem;
+}
+
+/* =========================================
+   FRECUENCIA
+========================================= */
+
+.plan-frecuencia {
+  color: var(--verde-palo);
+
+  font-size: 0.8rem;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 1rem;
+}
+
+/* =========================================
+   BOTÓN DE PLAN
+========================================= */
+
+.plan-boton {
+  margin-top: auto;
+
+  align-self: flex-start;
+
+  color: var(--verde-oscuro);
+
+  border: 1px solid var(--verde-palo);
+  border-radius: 25px;
+
+  padding: 0.65rem 1.2rem;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background-color: var(--verde-palo);
+
+    color: var(--blanco);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--verde-oscuro);
+    outline-offset: 3px;
+  }
+}
+
+/* =========================================
+   INFORMACIÓN DE PLANES
+========================================= */
+
+.planes-info {
+  background-color: var(--rosado-suave);
+
+  padding: 5rem 8%;
+
+  text-align: center;
+
+  article {
+    max-width: 700px;
+
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+/* =========================================
+   NO COMÚN - GALLERY
+========================================= */
+
+/* =========================================
+   HERO DE GALERÍA
+========================================= */
+
+.galeria-hero {
+  background-color: var(--rosado-suave);
+
+  padding: 5rem 8%;
+
+  text-align: center;
+
+  article {
+    max-width: 800px;
+
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 1rem;
+  }
+
+  article > p:last-child {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 1.05rem;
+  }
+}
+
+.galeria-etiqueta {
+  color: var(--verde-palo);
+
+  font-size: 0.9rem;
+  font-weight: bold;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   GALERÍA
+========================================= */
+
+.galeria {
+  max-width: var(--ancho-maximo);
+
+  margin: 0 auto;
+
+  padding: 5rem 8%;
+}
+
+.galeria-introduccion {
+  max-width: 700px;
+
+  margin: 0 auto 3rem;
+
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================================
+   GALERÍA DE IMÁGENES
+========================================= */
+
+.galeria-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 2rem;
+}
+
+.galeria-card {
+  margin: 0;
+
+  background-color: var(--blanco);
+
+  border: 1px solid var(--rosado-palo);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 15px rgba(61, 61, 61, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 7px 20px rgba(61, 61, 61, 0.12);
+  }
+
+  img {
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+  }
+
+  figcaption {
+    padding: 1.5rem;
+
+    text-align: center;
+  }
+
+  h3 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: 1.3rem;
+
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================================
+   NO COMÚN - CONTACT
+========================================= */
+
+/* =========================================
+   CONTACTO
+========================================= */
+
+.contacto {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 5rem 8%;
+}
+
+.contacto-introduccion {
+  max-width: 700px;
+
+  margin: 0 auto 3rem;
+
+  text-align: center;
+
+  h1 {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 1rem;
+  }
+
+  p:last-child {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.contacto-formulario {
+  background-color: var(--blanco);
+
+  border: 1px solid var(--rosado-palo);
+
+  border-radius: 20px;
+
+  padding: 2.5rem;
+
+  box-shadow: 0 4px 15px rgba(61, 61, 61, 0.08);
+
+  fieldset {
+    border: none;
+  }
+
+  legend {
+    color: var(--verde-oscuro);
+
+    font-family: var(--fuente-titulo);
+
+    font-size: 2rem;
+    font-weight: bold;
+
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+
+    color: var(--verde-oscuro);
+
+    font-weight: bold;
+
+    margin-bottom: 0.4rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+
+    padding: 0.8rem 1rem;
+
+    margin-bottom: 1.3rem;
+
+    border: 1px solid var(--rosado-palo);
+
+    border-radius: 10px;
+
+    background-color: var(--rosado-suave);
+
+    color: var(--texto);
+
+    font-family: var(--fuente-texto);
+
+    font-size: 1rem;
+
+    &:focus {
+      outline: 2px solid var(--verde-palo);
+      outline-offset: 2px;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+
+    min-height: 140px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .encabezado {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .hero,
+  .about-hero {
+    gap: 2rem;
+
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .sobre-mi-grid,
+  .por-que-enseno {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-mi-destacado,
+  .por-que-frase {
+    max-width: 650px;
+
+    margin: 0 auto;
+  }
+
+  /* SERVICES Y PLANS */
+
+  .servicios-grid,
+  .planes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 719px) {
+  /* HEADER */
+
+  .encabezado {
+    padding: 1rem;
+  }
+
+  .encabezado nav {
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 0.2rem;
+  }
+
+  .encabezado nav .logo {
+    margin-right: 0;
+
+    margin-bottom: 0.5rem;
+  }
+
+  /* ESPACIO DEL HEADER */
+
+  main {
+    padding-top: 190px;
+  }
+
+  /* HERO HOME */
+
+  .hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding: 4rem 1.5rem 2rem;
+
+    text-align: center;
+  }
+
+  .hero .hero-contenido {
+    max-width: 100%;
+  }
+
+  .hero .hero-subtitulo {
+    font-size: 0.8rem;
+
+    letter-spacing: 1.5px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .hero .hero-descripcion {
+    font-size: 1rem;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero .hero-imagen img {
+    max-width: 450px;
+  }
+
+  /* ABOUT HERO */
+
+  .about-hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding: 4rem 1.5rem 3rem;
+
+    gap: 2.5rem;
+
+    text-align: center;
+  }
+
+  .about-hero .about-hero-contenido {
+    max-width: 100%;
+  }
+
+  .about-hero .about-hero-contenido h1 {
+    font-size: clamp(2.8rem, 14vw, 4rem);
+  }
+
+  .about-hero .about-hero-contenido > p:not(.seccion-subtitulo) {
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 1rem;
+  }
+
+  .about-hero .about-hero-imagen {
+    width: 100%;
+
+    max-width: 400px;
+
+    margin: 0 auto;
+  }
+
+  /* SECCIONES */
+
+  .bienvenida,
+  .servicios-preview,
+  .galeria,
+  .contacto {
+    padding: 4rem 1.5rem;
+  }
+
+  .beneficios,
+  .planes-preview,
+  .llamada-accion,
+  .cualidades,
+  .kris-room {
+    padding: 4rem 1.5rem;
+  }
+
+  /* ABOUT */
+
+  .sobre-mi {
+    padding: 4rem 1.5rem;
+  }
+
+  .sobre-mi .sobre-mi-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .sobre-mi .sobre-mi-texto {
+    text-align: center;
+  }
+
+  .sobre-mi .sobre-mi-texto p {
+    font-size: 1rem;
+  }
+
+  .sobre-mi .sobre-mi-destacado {
+    padding: 2rem 1.5rem;
+  }
+
+  /* SERVICES */
+
+  .servicios {
+    padding: 4rem 1.5rem;
+  }
+
+  .servicio-card {
+    padding: 2rem;
+  }
+
+  .servicio-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .servicio-boton {
+    min-height: 44px;
+
+    display: inline-flex;
+
+    align-items: center;
+  }
+
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* PLANS */
+
+  .planes {
+    padding: 4rem 1.5rem;
+  }
+
+  .plan-card {
+    padding: 2rem;
+  }
+
+  .plan-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .plan-boton {
+    min-height: 44px;
+
+    display: inline-flex;
+
+    align-items: center;
+  }
+
+  .planes-info {
+    padding: 4rem 1.5rem;
+  }
+  .planes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* GALLERY */
+
+  .galeria-hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .galeria-card img {
+    height: 220px;
+  }
+
+  /* CONTACT */
+
+  .contacto-formulario {
+    padding: 2rem 1.5rem;
+  }
+
+  .contacto-formulario legend {
+    font-size: 1.8rem;
+  }
+
+  /* TÍTULOS */
+
+  section h2 {
+    font-size: 2.2rem;
+  }
+
+  /* BOTONES */
+
+  .hero-boton,
+  .boton-secundario {
+    min-height: 44px;
+  }
+
+  /* BACK TO TOP */
+
+  #back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+
+    width: 42px;
+    height: 42px;
+  }
+}
+/* FOOTER */
+
+footer {
+    padding: 2rem 1.5rem 1rem;
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-columna {
+        text-align: center;
+    }
+}
+
