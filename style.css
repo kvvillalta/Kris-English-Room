@@ -434,7 +434,6 @@ footer {
     }
 }
 
-
 /* =========================================
    NO COMÚN - HOME
 ========================================= */
@@ -1912,7 +1911,7 @@ footer {
     min-height: 44px;
   }
 
-  /* BACK TO TOP */
+    /* BACK TO TOP */
 
   #back-to-top {
     right: 1rem;
@@ -1921,19 +1920,20 @@ footer {
     width: 42px;
     height: 42px;
   }
-}
-/* FOOTER */
 
-footer {
+  /* FOOTER */
+
+  footer {
     padding: 2rem 1.5rem 1rem;
 
     .footer-contenido {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
     .footer-columna {
-        text-align: center;
+      text-align: center;
     }
-}
+  }
 
+}
