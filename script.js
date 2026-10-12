@@ -72,3 +72,7 @@ if (form) {
     });
 
 }
+
+const encabezado = document.querySelector(".encabezado");
+
+console.log("Encabezado encontrado:", encabezado);
