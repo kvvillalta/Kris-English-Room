@@ -76,3 +76,42 @@ if (form) {
 const encabezado = document.querySelector(".encabezado");
 
 console.log("Encabezado encontrado:", encabezado);
+
+
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector(".encabezado nav");
+
+if (menuButton && navigation) {
+    menuButton.addEventListener("click", function () {
+        const isOpen = navigation.classList.toggle("menu-abierto");
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        menuButton.querySelector("span").textContent = isOpen ? "×" : "☰";
+    });
+
+    navigation.querySelectorAll('a:not(.logo)').forEach(function (link) {
+        link.addEventListener("click", function () {
+            navigation.classList.remove("menu-abierto");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+            menuButton.querySelector("span").textContent = "☰";
+        });
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" &&
+            navigation.classList.contains("menu-abierto")) {
+            navigation.classList.remove("menu-abierto");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+            menuButton.querySelector("span").textContent = "☰";
+            menuButton.focus();
+        }
+    });
+}
