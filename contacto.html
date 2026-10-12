@@ -207,128 +207,97 @@
                 <section class="contacto-formulario-contenedor">
 
 
-                    <form
-                        class="contacto-formulario"
-                        id="contact-form"
-                        action="https://formsubmit.co/kristel.villalta.rodriguez@est.una.ac.cr"
-                        method="POST"
-                    >
+                   
+<form
+    class="contacto-formulario"
+    id="contact-form"
+    action="https://api.web3forms.com/submit"
+    method="POST"
+>
+    <!-- WEB3FORMS CONFIGURATION -->
 
+    <input
+        type="hidden"
+        name="access_key"
+        value="2e0f47f8-9951-4c58-95c6-fbbbaabd0f06"
+    >
 
-                        <!-- FORMSUBMIT CONFIGURATION -->
+    <input
+        type="hidden"
+        name="subject"
+        value="New message from Kris English Room"
+    >
 
-                        <input
-                            type="hidden"
-                            name="_subject"
-                            value="New message from Kris English Room"
-                        >
+    <input
+        type="hidden"
+        name="redirect"
+        value="https://kvvillalta.github.io/Kris-English-Room/gracias.html"
+    >
 
-                        <input
-                            type="hidden"
-                            name="_autoresponse"
-                            value="Thank you for contacting Kris English Room. We have received your message and will get back to you soon."
-                        >
+    <input
+        type="checkbox"
+        name="botcheck"
+        style="display: none;"
+    >
 
-                        <input
-                            type="hidden"
-                            name="_template"
-                            value="table"
-                        >
+    <fieldset>
+        <legend>Send us a message</legend>
 
-                        <input
-                            type="hidden"
-                            name="_next"
-                            value="https://kvvillalta.github.io/Kris-English-Room/gracias.html"
-                        >
+        <p class="formulario-descripcion">
+            Fill in the information below and we will get back to you soon.
+        </p>
 
+        <!-- NAME -->
+        <label for="name">Name</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            placeholder="Your name"
+            required
+        >
 
-                        <fieldset>
+        <!-- EMAIL -->
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="Your email"
+            required
+        >
 
+        <!-- SUBJECT -->
+        <label for="subject-field">Subject</label>
+        <input
+            type="text"
+            id="subject-field"
+            name="Inquiry subject"
+            placeholder="What would you like to know?"
+            required
+        >
 
-                            <legend>
-                                Send us a message
-                            </legend>
+        <!-- MESSAGE -->
+        <label for="message">Message</label>
+        <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Write your message here..."
+            required
+        ></textarea>
 
-
-                            <p class="formulario-descripcion">
-                                Fill in the information below and we will get back to you soon.
-                            </p>
-
-
-                            <!-- NAME -->
-
-                            <label for="name">
-                                Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                autocomplete="name"
-                                placeholder="Your name"
-                                required
-                            >
-
-
-                            <!-- EMAIL -->
-
-                            <label for="email">
-                                Email
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                autocomplete="email"
-                                placeholder="Your email"
-                                required
-                            >
-
-
-                            <!-- SUBJECT -->
-
-                            <label for="subject">
-                                Subject
-                            </label>
-
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                placeholder="What would you like to know?"
-                                required
-                            >
-
-
-                            <!-- MESSAGE -->
-
-                            <label for="message">
-                                Message
-                            </label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="6"
-                                placeholder="Write your message here..."
-                                required
-                            ></textarea>
-
-
-                            <!-- SUBMIT -->
-
-                            <button
-                                type="submit"
-                                class="hero-boton"
-                            >
-                                Send message
-                            </button>
-
-
-                        </fieldset>
-
+        <!-- SUBMIT -->
+        <button
+            type="submit"
+            class="hero-boton"
+        >
+            Send message
+        </button>
+    </fieldset>
+</form>
 
                     </form>
 
