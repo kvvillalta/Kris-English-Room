@@ -2140,3 +2140,44 @@ footer {
     text-align: center;
   }
 }
+
+
+/* Accessible form validation */
+
+#contact-form .campo {
+    display: grid;
+    gap: 0.5rem;
+}
+
+#contact-form .error {
+    color: #b42318;
+    font-size: 0.9rem;
+}
+
+#contact-form [aria-invalid="true"] {
+    border: 2px solid #b42318;
+}
+
+#contact-form .hidden {
+    display: none;
+}
+
+#contact-form input:focus-visible,
+#contact-form textarea:focus-visible,
+#contact-form button:focus-visible {
+    outline: 3px solid #2457c5;
+    outline-offset: 3px;
+}
+
+#contact-form #form-status {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    #contact-form input,
+    #contact-form textarea,
+    #contact-form button {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+}
