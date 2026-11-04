@@ -10,7 +10,6 @@
     <title>Gallery | Kris English Room</title>
 
     <link rel="stylesheet" href="style.css">
-  
 
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="img/favicon_io/favicon-32x32.png">
@@ -19,36 +18,39 @@
 
 <body>
 
-<!-- HEADER -->
-<header class="encabezado">
-    <nav id="menu-principal" aria-label="Main navigation">
+    <!-- HEADER -->
+    <header class="encabezado">
+        <nav id="menu-principal" aria-label="Main navigation">
 
-        <a class="logo" href="home.html">
-            <img src="img/favicon_io/apple-touch-icon.png"
-                 alt="Kris English Room logo">
-            <span>Kris English Room</span>
-        </a>
+            <a class="logo" href="home.html">
+                <img src="img/favicon_io/apple-touch-icon.png"
+                     alt="Kris English Room logo">
+                <span>Kris English Room</span>
+            </a>
 
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-controls="menu-principal"
-            aria-expanded="false">
-            <span aria-hidden="true">☰</span>
-        </button>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="menu-principal"
+                aria-expanded="false">
+                <span aria-hidden="true">☰</span>
+            </button>
 
-        <a href="home.html">Home</a>
-        <a href="about-me.html">About Me</a>
-        <a href="services.html">Services</a>
-        <a href="plans.html">Plans</a>
-        <a href="gallery.html" aria-current="page">Gallery</a>
-        <a href="contact.html">Contact</a>
+            <a href="home.html">Home</a>
+            <a href="about-me.html">About Me</a>
+            <a href="services.html">Services</a>
+            <a href="plans.html">Plans</a>
+            <a href="gallery.html" aria-current="page">Gallery</a>
+            <a href="contact.html">Contact</a>
 
-    </nav>
-</header>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
     <main>
 
+        <!-- GALLERY HERO -->
         <section class="galeria-hero">
 
             <article>
@@ -66,7 +68,7 @@
 
         </section>
 
-
+        <!-- GALLERY CONTENT -->
         <section class="galeria">
 
             <article class="galeria-introduccion">
@@ -79,7 +81,6 @@
                 </p>
 
             </article>
-
 
             <section class="galeria-grid" aria-label="Kris English Room gallery">
 
@@ -98,7 +99,6 @@
 
                 </figure>
 
-
                 <figure class="galeria-card">
 
                     <img src="img/galeria/clase-virtual.webp"
@@ -108,12 +108,11 @@
                         <h3>Interactive Dynamics</h3>
 
                         <p>
-                           Fun activities and real-life roleplay designed to build speaking confidence fast.
+                            Fun activities and real-life roleplay designed to build speaking confidence fast.
                         </p>
                     </figcaption>
 
                 </figure>
-
 
                 <figure class="galeria-card">
 
@@ -130,7 +129,6 @@
 
                 </figure>
 
-
                 <figure class="galeria-card">
 
                     <img src="img/galeria/speaking.webp"
@@ -146,7 +144,6 @@
 
                 </figure>
 
-
                 <figure class="galeria-card">
 
                     <img src="img/galeria/listening.webp"
@@ -161,7 +158,6 @@
                     </figcaption>
 
                 </figure>
-
 
                 <figure class="galeria-card">
 
@@ -182,7 +178,7 @@
 
         </section>
 
-
+        <!-- CALL TO ACTION -->
         <section class="llamada-accion">
 
             <header>
@@ -197,7 +193,7 @@
                 Discover our services and find the option that works best for you.
             </p>
 
-            <a class="hero-boton" href="servicios.html">
+            <a class="hero-boton" href="services.html">
                 Explore our services
             </a>
 
@@ -205,47 +201,45 @@
 
     </main>
 
+    <!-- FOOTER -->
+    <footer>
 
- <!-- FOOTER -->
+        <section class="footer-contenido">
 
- <footer>
-    <section class="footer-contenido">
+            <section class="footer-columna">
+                <h3>Kris English Room</h3>
+                <p>Learn, practice and grow with English.</p>
+            </section>
 
-        <section class="footer-columna">
-            <h3>Kris English Room</h3>
-            <p>Learn, practice and grow with English.</p>
+            <section class="footer-columna">
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:kristel.villalta.rodriguez@est.una.ac.cr">
+                        kristel.villalta.rodriguez@est.una.ac.cr
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <a href="tel:+50660518417">
+                        +506 6051-8417
+                    </a>
+                </p>
+            </section>
+
         </section>
 
-        <section class="footer-columna">
-            <h3>Contact</h3>
+        <p class="footer-derechos">
+            &copy; <span id="footer-year"></span> Kris English Room.
+            All rights reserved.
+        </p>
 
-            <p>
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:kristel.villalta.rodriguez@est.una.ac.cr">
-                    kristel.villalta.rodriguez@est.una.ac.cr
-                </a>
-            </p>
-
-            <p>
-                <i class="fa-solid fa-phone"></i>
-                <a href="tel:+50660518417">
-                    +506 6051-8417
-                </a>
-            </p>
-        </section>
-
-    </section>
-
-    <p class="footer-derechos">
-        &copy; <span id="footer-year"></span> Kris English Room.
-        All rights reserved.
-    </p>
-</footer>
-
+    </footer>
 
     <script src="script.js"></script>
 
 </body>
 
 </html>
-

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
-    
 
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
@@ -21,41 +19,39 @@
 
 <body>
 
-<!-- HEADER -->
-<header class="encabezado">
-    <nav aria-label="Main navigation">
+    <!-- HEADER -->
+    <header class="encabezado">
+        <nav id="menu-principal" aria-label="Main navigation">
 
-        <a class="logo" href="home.html">
-            <img src="img/favicon_io/apple-touch-icon.png"
-                 alt="Kris English Room logo">
-            <span>Kris English Room</span>
-        </a>
+            <a class="logo" href="home.html">
+                <img src="img/favicon_io/apple-touch-icon.png"
+                     alt="Kris English Room logo">
+                <span>Kris English Room</span>
+            </a>
 
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-controls="menu-principal"
-            aria-expanded="false">
-            <span aria-hidden="true">☰</span>
-        </button>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="menu-principal"
+                aria-expanded="false">
+                <span aria-hidden="true">☰</span>
+            </button>
 
-        <a href="home.html">Home</a>
-        <a href="about-me.html" aria-current="page">About Me</a>
-        <a href="services.html">Services</a>
-        <a href="plans.html">Plans</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+            <a href="home.html">Home</a>
+            <a href="about-me.html" aria-current="page">About Me</a>
+            <a href="services.html">Services</a>
+            <a href="plans.html">Plans</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
 
-    </nav>
-</header>
+        </nav>
+    </header>
 
     <!-- MAIN -->
-
     <main>
 
         <!-- INTRO -->
-
         <section class="about-hero">
 
             <article class="about-hero-contenido">
@@ -88,9 +84,7 @@
 
         </section>
 
-
         <!-- ABOUT KRISTEL -->
-
         <section class="sobre-mi" id="sobre-mi">
 
             <header class="sobre-mi-intro">
@@ -155,9 +149,7 @@
 
         </section>
 
-
         <!-- TEACHER QUALITIES -->
-
         <section class="cualidades">
 
             <header>
@@ -251,9 +243,7 @@
 
         </section>
 
-
         <!-- WHY TEACHING -->
-
         <section class="por-que-enseno">
 
             <article>
@@ -301,9 +291,7 @@
 
         </section>
 
-
         <!-- KRIS ENGLISH ROOM -->
-
         <section class="kris-room">
 
             <header>
@@ -369,9 +357,7 @@
 
         </section>
 
-
         <!-- CALL TO ACTION -->
-
         <section class="llamada-accion">
 
             <header>
@@ -391,7 +377,7 @@
                 that works best for you.
             </p>
 
-            <a class="hero-boton" href="servicios.html">
+            <a class="hero-boton" href="services.html">
                 Explore services
             </a>
 
@@ -399,51 +385,51 @@
 
     </main>
 
-
     <!-- BACK TO TOP -->
-
     <button id="back-to-top" aria-label="Back to top">
         ↑
     </button>
 
+    <!-- FOOTER -->
+    <footer>
 
-     <!-- FOOTER -->
+        <section class="footer-contenido">
 
- <footer>
-    <section class="footer-contenido">
+            <section class="footer-columna">
+                <h3>Kris English Room</h3>
+                <p>Learn, practice and grow with English.</p>
+            </section>
 
-        <section class="footer-columna">
-            <h3>Kris English Room</h3>
-            <p>Learn, practice and grow with English.</p>
+            <section class="footer-columna">
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:kristel.villalta.rodriguez@est.una.ac.cr">
+                        kristel.villalta.rodriguez@est.una.ac.cr
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+50660518417">
+                        +506 6051-8417
+                    </a>
+                </p>
+
+            </section>
+
         </section>
 
-        <section class="footer-columna">
-            <h3>Contact</h3>
+        <p class="footer-derechos">
+            &copy; <span id="footer-year"></span> Kris English Room.
+            All rights reserved.
+        </p>
 
-            <p>
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:kristel.villalta.rodriguez@est.una.ac.cr">
-                    kristel.villalta.rodriguez@est.una.ac.cr
-                </a>
-            </p>
+    </footer>
 
-            <p>
-                <i class="fa-solid fa-phone"></i>
-                <a href="tel:+50660518417">
-                    +506 6051-8417
-                </a>
-            </p>
-        </section>
-
-    </section>
-
-    <p class="footer-derechos">
-        &copy; <span id="footer-year"></span> Kris English Room.
-        All rights reserved.
-    </p>
-</footer>
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
-
 </html>
