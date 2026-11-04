@@ -129,6 +129,7 @@ section h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.2;
 }
+
 /* =========================================
    BOTÓN PRINCIPAL
 ========================================= */
@@ -144,21 +145,27 @@ section h2 {
   font-size: 0.95rem;
   font-weight: bold;
   cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+  transition: all 0.3s ease;
 }
+
 .hero-boton:hover {
   background-color: var(--verde-oscuro);
   border-color: var(--verde-oscuro);
   color: var(--blanco);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
+
+.hero-boton:active {
+  transform: translateY(-1px) scale(0.97);
+}
+
 .hero-boton:focus-visible {
   outline: 2px solid var(--verde-oscuro);
-  outline-offset: 3px;
+  outline-offset: 4px;
 }
+
 /* =========================================
    BOTÓN SECUNDARIO
 ========================================= */
@@ -175,20 +182,26 @@ section h2 {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
+
 .boton-secundario:hover {
   background-color: var(--verde-palo);
   color: var(--blanco);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
+
+.boton-secundario:active {
+  transform: translateY(-1px) scale(0.97);
+}
+
 .boton-secundario:focus-visible {
   outline: 2px solid var(--verde-oscuro);
-  outline-offset: 3px;
+  outline-offset: 4px;
 }
+
 /* =========================================
    TARJETAS COMUNES
 ========================================= */
