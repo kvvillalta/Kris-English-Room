@@ -1,4 +1,6 @@
 
+/* jshint esversion: 6 */
+
 /* ========================================
    AÑO DEL FOOTER
 ======================================== */
@@ -15,6 +17,7 @@ if (footerYear) {
 ======================================== */
 
 const backToTop = document.querySelector("#back-to-top");
+
 
 if (backToTop) {
     window.addEventListener("scroll", function () {
@@ -40,7 +43,8 @@ if (backToTop) {
 const form = document.querySelector("#contact-form");
 
 if (form) {
-        form.noValidate = true;
+    form.noValidate = true;
+
     const name = form.querySelector("#name");
     const email = form.querySelector("#email");
     const subject = form.querySelector("#subject-field");
@@ -66,23 +70,21 @@ if (form) {
         }
     ];
 
-    
-function setError(field, text) {
-    field.element.setCustomValidity(text);
+    const setError = function (field, text) {
+        field.element.setCustomValidity(text);
 
-    if (text) {
-        field.element.setAttribute("aria-invalid", "true");
-    } else {
-        field.element.removeAttribute("aria-invalid");
-    }
+        if (text) {
+            field.element.setAttribute("aria-invalid", "true");
+        } else {
+            field.element.removeAttribute("aria-invalid");
+        }
 
-    if (field.error) {
-        field.error.textContent = text;
-    }
-}
+        if (field.error) {
+            field.error.textContent = text;
+        }
+    };
 
-
-    function validateName() {
+    const validateName = function () {
         const value = name.value.trim();
         let error = "";
 
@@ -96,9 +98,9 @@ function setError(field, text) {
 
         setError(fields[0], error);
         return error === "";
-    }
+    };
 
-    function validateEmail() {
+    const validateEmail = function () {
         const value = email.value.trim();
         let error = "";
 
@@ -114,9 +116,9 @@ function setError(field, text) {
 
         setError(fields[1], error);
         return error === "";
-    }
+    };
 
-    function validateSubject() {
+    const validateSubject = function () {
         const value = subject.value.trim();
         let error = "";
 
@@ -130,9 +132,9 @@ function setError(field, text) {
 
         setError(fields[2], error);
         return error === "";
-    }
+    };
 
-    function validateMessage() {
+    const validateMessage = function () {
         const value = message.value.trim();
         let error = "";
 
@@ -146,7 +148,7 @@ function setError(field, text) {
 
         setError(fields[3], error);
         return error === "";
-    }
+    };
 
     const validators = [
         validateName,
@@ -155,11 +157,11 @@ function setError(field, text) {
         validateMessage
     ];
 
-    function validateAllFields() {
+    const validateAllFields = function () {
         return validators.map(function (validate) {
             return validate();
         }).every(Boolean);
-    }
+    };
 
     fields.forEach(function (field, index) {
         const element = field.element;
@@ -224,7 +226,7 @@ const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".encabezado nav");
 
 if (menuButton && navigation) {
-    function closeMenu() {
+    const closeMenu = function () {
         navigation.classList.remove("menu-abierto");
 
         menuButton.setAttribute("aria-expanded", "false");
@@ -238,7 +240,7 @@ if (menuButton && navigation) {
         if (icon) {
             icon.textContent = "☰";
         }
-    }
+    };
 
     menuButton.addEventListener("click", function () {
         const isOpen = navigation.classList.toggle("menu-abierto");
@@ -250,9 +252,8 @@ if (menuButton && navigation) {
 
         menuButton.setAttribute(
             "aria-label",
-            isOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
+            isOpen ? "Close navigation menu" :
+                "Open navigation menu"
         );
 
         const icon = menuButton.querySelector("span");
