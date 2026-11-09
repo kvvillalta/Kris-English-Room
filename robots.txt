@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://kvvillalta.github.io/Kris-English-Room/sitemap.xml
